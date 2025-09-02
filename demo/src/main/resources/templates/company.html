@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>会社概要 | ACME Inc.</title>
+  <meta name="description" content="ACME Inc. の会社概要・ミッション・沿革・所在地のご案内。" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <span class="brand-logo" aria-hidden="true"></span>
+        <span>ACME Inc.</span>
+      </a>
+      <div class="menu" role="navigation">
+        <a href="/">ホーム</a>
+        <a href="/company">会社情報</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <span class="badge">Company</span>
+      <h1 class="headline">会社について</h1>
+      <p class="sub">
+        テクノロジーで企業の成長を加速し、持続可能な価値創造に貢献します。
+        <span th:if="${name}" th:text="' ようこそ、' + ${name} + ' さん。'" class="muted"></span>
+      </p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <h2>ミッション</h2>
+      <div class="card">
+        <p class="muted">
+          “テクノロジーを、事業の成長エンジンに。” を掲げ、クラウド・データ・AI・UX を横断して
+          プロダクトとオペレーションを最適化します。
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>バリュー</h2>
+      <div class="grid cols-3">
+        <div class="card"><h3>顧客価値起点</h3><p class="muted">成果に直結する指標で意思決定。</p></div>
+        <div class="card"><h3>スピード×品質</h3><p class="muted">継続的デリバリーで品質を進化。</p></div>
+        <div class="card"><h3>学習と共創</h3><p class="muted">チームで学び、共に成長。</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>会社概要</h2>
+      <div class="card">
+        <div class="grid cols-3">
+          <div>
+            <strong>社名</strong>
+            <p class="muted">ACME Inc.</p>
+          </div>
+          <div>
+            <strong>設立</strong>
+            <p class="muted">2020年4月</p>
+          </div>
+          <div>
+            <strong>所在地</strong>
+            <p class="muted">東京都千代田区1-2-3</p>
+          </div>
+          <div>
+            <strong>代表者</strong>
+            <p class="muted">山田 太郎</p>
+          </div>
+          <div>
+            <strong>事業内容</strong>
+            <p class="muted">ソフトウェア開発 / クラウド・SRE / データ・AI</p>
+          </div>
+          <div>
+            <strong>従業員数</strong>
+            <p class="muted">120名</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>沿革</h2>
+      <div class="card">
+        <ul class="muted" style="margin:0 0 0 1rem;">
+          <li>2020年 - 会社設立</li>
+          <li>2021年 - クラウド事業開始、ISO27001 取得</li>
+          <li>2023年 - データ/AI事業拡張、累計300社を支援</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap;">
+      <div>© <span th:text="${#temporals.format(#temporals.createNow(), 'yyyy')}">2025</span> ACME Inc.</div>
+      <div style="display:flex; gap:1rem;">
+        <a href="/">ホーム</a>
+        <a href="/company">会社情報</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
